@@ -1,39 +1,139 @@
 {
    "Person": [
-	
       {
-         "name":"Jack",
+         "Humanbeing": [
+            {
+               "name": "Ivan",
+               "childCount": "0"
+            },
+            {
+               "name": "Vasiliy",
+               "childCount": "0"
+            }
+         ],
+         "name": "Jack",
          "language": "English",
          "childCount": "2",
          "married": "yes"
       },
-	
       {
-         "name":"Bob",
+         "name": "Bob",
          "language": "English",
          "childCount": "3",
-         "married": "yes"
-      }
-	  
-	   {
-         "name":"Tom",
+         "married": "yes",
+         "children": [
+            {
+               "name": "Jack",
+               "language": "English",
+               "childCount": "2",
+               "married": "yes"
+            },
+            {
+               "name": "Jack",
+               "language": "English",
+               "childCount": "2",
+               "married": "yes"
+            },
+            {
+               "name": "Jack",
+               "language": "English",
+               "childCount": "2",
+               "married": "yes",
+               "children": [
+                  {
+                     "name": "Jack",
+                     "language": "English",
+                     "childCount": "2",
+                     "married": "yes"
+                  },
+                  {
+                     "name": "Jack",
+                     "language": "English",
+                     "childCount": "2",
+                     "married": "yes"
+                  },
+                  {
+                     "name": "Jack",
+                     "language": "English",
+                     "childCount": "2",
+                     "married": "yes"
+                  },
+                  {
+                     "name": "Jack",
+                     "language": "English",
+                     "childCount": "2",
+                     "married": "yes"
+                  },
+                  {
+                     "name": "Jack",
+                     "language": "English",
+                     "childCount": "2",
+                     "married": "yes",
+                     "children": [
+                        {
+                           "name": "Jack",
+                           "language": "English",
+                           "childCount": "2",
+                           "married": "yes"
+                        },
+                        {
+                           "name": "Jack",
+                           "language": "English",
+                           "childCount": "2",
+                           "married": "yes"
+                        },
+                        {
+                           "name": "Jack",
+                           "language": "English",
+                           "childCount": "2",
+                           "married": "yes"
+                        },
+                        {
+                           "name": "Jack",
+                           "language": "English",
+                           "childCount": "2",
+                           "married": "yes"
+                        },
+                        {
+                           "name": "Jack",
+                           "language": "English",
+                           "childCount": "2",
+                           "married": "yes"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "name": "Jack",
+               "language": "English",
+               "childCount": "2",
+               "married": "yes"
+            },
+            {
+               "name": "Jack",
+               "language": "English",
+               "childCount": "2",
+               "married": "yes"
+            }
+         ]
+      },
+      {
+         "name": "Tom",
          "language": "English",
          "childCount": "2",
          "married": "yes"
-      }
-	  
-	  	   {
-         "name":"Sergey",
+      },
+      {
+         "name": "Sergey",
          "language": "Russian",
          "childCount": "0",
          "married": "no"
       }
-   ]
-   
-    "Human": [
-	
+   ],
+   "Human": [
       {
-         "name":"Jack",
+         "name": "Jack",
          "language": "English",
          "childCount": "2",
          "married": "yes"

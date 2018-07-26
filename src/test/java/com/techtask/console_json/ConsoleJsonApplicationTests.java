@@ -18,8 +18,8 @@ public class ConsoleJsonApplicationTests {
 
     @Test
     public void verifyJSONProcessorTest() {
-        String expectedResult = "*** Found 3 objects with field childCount equals 2 **** \n" +
-                "*** Found 5 childCount ***";
+        String expectedResult = "*** Found 18 objects with field childCount equals 2 **** \n" +
+                "*** Found 22 childCount ***";
         String actualResult = commandLineJSONProcessor.processJSONWithParameters(filePath, "childCount", "2");
         Assert.assertEquals("The result of processing JSON is incorrect",expectedResult, actualResult);
     }
