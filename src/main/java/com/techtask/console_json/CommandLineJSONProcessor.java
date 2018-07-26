@@ -34,7 +34,7 @@ public class CommandLineJSONProcessor {
         try {
 
             Object obj = parser.parse(new FileReader(filePath));
-            searchJSON((JSONObject) obj, name, value);
+            scanObject((JSONObject) obj, name, value);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -49,33 +49,35 @@ public class CommandLineJSONProcessor {
         return result;
     }
 
-    private static void searchJSON(JSONObject jsonObj, String name, String value) {
-        for (Object keyObj : jsonObj.keySet()) {
-            String key = (String) keyObj;
-            Object valObj = jsonObj.get(key);
-            if (valObj instanceof JSONObject) {
-                searchJSON((JSONObject) valObj, name, value);
-            } else {
-                JSONArray person = (JSONArray) valObj;
-                Iterator i = person.iterator();
-                while (i.hasNext()) {
-                    JSONObject innerObj = (JSONObject) i.next();
-                    for (Object inKeyObj : innerObj.keySet()) {
-                        String inKey = (String) inKeyObj;
-                        Object inValObj = innerObj.get(inKey);
-                        if (inValObj instanceof JSONObject) {
-                            searchJSON((JSONObject) inValObj, name, value);
-                        }
-                        if (innerObj.containsKey(name)) {
-                            objectCount++;
-                        }
-                        if (innerObj.get(name).equals(value)) {
-                            valueCount++;
-                        }
-                    }
+    private static void scanObject(JSONObject node, String name, String value) {
+
+        for (Object key : node.keySet()) {
+
+            String field = (String) key;
+            Object fieldValue = node.get(field);
+
+            if (fieldValue instanceof JSONObject) {
+                scanObject((JSONObject) fieldValue, name, value);
+            } else if (fieldValue.toString().startsWith("[")) {
+                scanArray((JSONArray) fieldValue, name, value);
+            }
+
+            if (field.equals(name)) {
+                objectCount++;
+                if (fieldValue.equals(value)) {
+                    valueCount++;
                 }
             }
         }
     }
 
+    private static void scanArray(JSONArray array, String name, String value) {
+        Iterator i = array.iterator();
+        while (i.hasNext()) {
+            JSONObject innerObj = (JSONObject) i.next();
+            scanObject(innerObj, name, value);
         }
+
+    }
+
+}
