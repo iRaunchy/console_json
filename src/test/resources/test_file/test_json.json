@@ -1,0 +1,42 @@
+{
+   "Person": [
+	
+      {
+         "name":"Jack",
+         "language": "English",
+         "childCount": "2",
+         "married": "yes"
+      },
+	
+      {
+         "name":"Bob",
+         "language": "English",
+         "childCount": "3",
+         "married": "yes"
+      }
+	  
+	   {
+         "name":"Tom",
+         "language": "English",
+         "childCount": "2",
+         "married": "yes"
+      }
+	  
+	  	   {
+         "name":"Sergey",
+         "language": "Russian",
+         "childCount": "0",
+         "married": "no"
+      }
+   ]
+   
+    "Human": [
+	
+      {
+         "name":"Jack",
+         "language": "English",
+         "childCount": "2",
+         "married": "yes"
+      }
+   ]
+}
