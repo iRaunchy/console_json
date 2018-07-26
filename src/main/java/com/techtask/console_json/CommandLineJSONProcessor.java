@@ -16,7 +16,7 @@ import java.util.Iterator;
 public class CommandLineJSONProcessor {
 
     private static int objectCount = 0;
-    private static int countValues = 0;
+    private static int valueCount = 0;
 
     @Value("${filepath:unknown}")
     private String filePath;
@@ -44,7 +44,7 @@ public class CommandLineJSONProcessor {
             e.printStackTrace();
         }
 
-        String result = "*** Found " + countValues + " objects with field " + name + " equals " + value + " **** \n" +
+        String result = "*** Found " + valueCount + " objects with field " + name + " equals " + value + " **** \n" +
                 "*** Found " + objectCount + " " + name + " ***";
         return result;
     }
@@ -70,7 +70,7 @@ public class CommandLineJSONProcessor {
                             objectCount++;
                         }
                         if (innerObj.get(name).equals(value)) {
-                            countValues++;
+                            valueCount++;
                         }
                     }
                 }
