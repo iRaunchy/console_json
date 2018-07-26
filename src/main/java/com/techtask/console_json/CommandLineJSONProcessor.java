@@ -60,15 +60,22 @@ public class CommandLineJSONProcessor {
                 Iterator i = person.iterator();
                 while (i.hasNext()) {
                     JSONObject innerObj = (JSONObject) i.next();
-                    if (innerObj.containsKey(name)) {
-                        objectCount++;
-                    }
-                    if (innerObj.get(name).equals(value)) {
-                        countValues++;
+                    for (Object inKeyObj : innerObj.keySet()) {
+                        String inKey = (String) inKeyObj;
+                        Object inValObj = innerObj.get(inKey);
+                        if (inValObj instanceof JSONObject) {
+                            searchJSON((JSONObject) inValObj, name, value);
+                        }
+                        if (innerObj.containsKey(name)) {
+                            objectCount++;
+                        }
+                        if (innerObj.get(name).equals(value)) {
+                            countValues++;
+                        }
                     }
                 }
             }
         }
     }
 
-}
+        }
