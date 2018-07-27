@@ -4,7 +4,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
@@ -17,15 +16,6 @@ public class CommandLineJSONProcessor {
 
     private static int objectCount = 0;
     private static int valueCount = 0;
-
-    @Value("${filepath:unknown}")
-    private String filePath;
-
-    @Value("${objectName:unknown}")
-    private String objectName;
-
-    @Value("${objectValue:unknown}")
-    private String objectValue;
 
     public String processJSONWithParameters(String filePath, String name, String value) {
 
