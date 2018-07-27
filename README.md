@@ -7,4 +7,5 @@ Starting a Gradle Daemon (subsequent builds will be faster)
 - with parameters: "path_to file" "node_name" "object_value"
 
 
-# File example is within resources in the project
+# File example is within test//resources in the project
+# JAR file is within src//resources
